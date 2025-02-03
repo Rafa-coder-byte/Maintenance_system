@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option csharp_namespace = "maintenance_calibration_system.GrpcProtos";
+
+package GrpcProtos;
+
+message GetRequest{
+	string id = 1;
+}
+
+message DeleteRequest{
+	string id = 1;
+}
+
+message PhysicalMagnitude{
+	string name = 1;
+    string unitofMagnitude = 2;
+}
+
+enum CommunicationProtocol{
+	ModBus = 0;
+	OPC = 1;
+	UA = 2;
+	BACNet = 3;
+}
+
+enum SignalControl{
+	Digital =  0;
+	Analog = 1;
+}
+
+enum PlanningTypes{
+	Calibration = 0;
+	Maintenance = 1;
+}
+
+enum TypeMaintenance{
+	Preventivo = 0;
+	Correctivo = 1;
+}

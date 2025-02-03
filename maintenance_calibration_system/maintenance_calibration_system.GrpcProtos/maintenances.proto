@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+option csharp_namespace = "maintenance_calibration_system.GrpcProtos";
+
+package GrpcProtos;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto"; // Para manejar fechas
+import "actuadores.proto"; // Importa el archivo Proto de Actuador para usar ActuadorDTO
+import "common.proto";
+
+// Servicio para manejar operaciones relacionadas con Mantenimiento
+service MaintenanceService {
+    rpc CreateMaintenance (CreateMaintenanceRequest) returns (MaintenanceDTO);
+    rpc GetMaintenance (GetRequest) returns (MaintenanceDTO);
+    rpc GetAllMaintenances (google.protobuf.Empty) returns (Maintenances);
+    rpc UpdateMaintenance (UpdatedMaintenanceDTO) returns (google.protobuf.Empty);
+    rpc DeleteMaintenance (DeleteRequest) returns (google.protobuf.Empty);
+    rpc AddOrModifyMaintenanceActuador (ModifyMaintenanceDTO) returns (google.protobuf.Empty);
+}
+
+// Mensaje para representar una actividad de mantenimiento
+message MaintenanceDTO {
+    string id = 1; // Identificador único del mantenimiento
+    google.protobuf.Timestamp dateActivity = 2; // Fecha de la actividad de mantenimiento
+    string nameTechnician = 3; // Nombre del técnico que realizó el mantenimiento
+    TypeMaintenance typeMaintenance = 4; // Nombre del tipo de mantenimiento
+    Actuadores MaintenanceActuador = 5; // Lista de actuadores con mantenimiento
+}
+
+message ModifyMaintenanceDTO{
+    string id = 1; // Identificador único de la calibración
+   Actuadores MaintenanceActuador = 2; // Lista de actuadores con mantenimiento
+}
+
+message UpdatedMaintenanceDTO{
+    string id = 1; // Identificador único del mantenimiento
+    google.protobuf.Timestamp dateActivity = 2; // Fecha de la actividad de mantenimiento
+    string nameTechnician = 3; // Nombre del técnico que realizó el mantenimiento
+    TypeMaintenance typeMaintenance = 4; // Nombre del tipo de mantenimiento
+}
+
+// Mensaje para representar una lista de actividades de mantenimiento
+message Maintenances {
+    repeated MaintenanceDTO items = 1; // Lista de actividades de mantenimiento
+}
+
+
+// Mensaje para manejar respuestas nulas
+message NullableMaintenanceDTO {
+    oneof kind {
+        google.protobuf.NullValue null = 1; // Valor nulo
+        MaintenanceDTO maintenance = 2; // Actividad de mantenimiento
+    }
+}
+
+// Mensaje para crear una nueva actividad de mantenimiento
+message CreateMaintenanceRequest {
+    google.protobuf.Timestamp dateActivity = 1; // Fecha de la actividad de mantenimiento
+    string nameTechnician = 2; // Nombre del técnico que realizó la actividad
+    TypeMaintenance typeMaintenance = 3; //Tipo de Mantenimiento
+}
+
+
+

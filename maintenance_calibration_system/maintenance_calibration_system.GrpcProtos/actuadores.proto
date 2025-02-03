@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option csharp_namespace = "maintenance_calibration_system.GrpcProtos";
+
+package GrpcProtos;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+import "common.proto";
+
+service Actuador {
+
+	rpc CreateActuador (CreateActuadorRequest) returns(ActuadorDTO);
+	rpc GetActuador (GetRequest) returns(NullableActuadorDTO);
+	rpc GetAllActuadores (google.protobuf.Empty) returns(Actuadores);
+	rpc UpdateActuador (ActuadorDTO) returns(google.protobuf.Empty);
+	rpc DeleteActuador (DeleteRequest) returns(google.protobuf.Empty);
+}
+
+message ActuadorDTO{
+	string id = 1;
+	string alphanumericCode = 2;
+	PhysicalMagnitude magnitude = 3;
+	string manufacturer = 4;
+	string codeControl = 5; 
+	SignalControl signalControl = 6;
+}
+
+message Actuadores{
+	repeated ActuadorDTO items = 1;
+}
+
+message NullableActuadorDTO{
+	oneof kind{
+		google.protobuf.Empty null = 1;
+		ActuadorDTO actuador = 2;
+	}
+}
+
+message CreateActuadorRequest{
+	string alphanumericCode = 1;
+	PhysicalMagnitude magnitude = 2;
+	string manufacturer = 3;
+	string codeControl = 4; 
+	SignalControl signalControl = 5;
+}

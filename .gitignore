@@ -1,0 +1,36 @@
+# Archivos de configuración de Visual Studio
+.vs/
+*.suo
+*.user
+*.userprefs
+
+# Archivos de compilación
+bin/
+obj/
+
+# Archivos de paquetes
+packages/
+*.nupkg
+
+# Archivos temporales y de respaldo
+*.tmp
+*.temp
+*.bak
+*.log
+
+# Archivos generados por el sistema operativo
+Thumbs.db
+.DS_Store
+
+# Archivos relacionados con la base de datos
+*.mdf
+*.ldf
+
+# Archivos de configuración específicos del entorno
+.env
+
+# Otros archivos que pueden ser generados o no necesarios
+*.exe
+*.dll
+*.pdb
+*.cache

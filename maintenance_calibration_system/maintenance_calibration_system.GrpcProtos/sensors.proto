@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option csharp_namespace = "maintenance_calibration_system.GrpcProtos";
+
+package GrpcProtos;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+import "common.proto";
+
+service Sensor {
+
+	rpc CreateSensor (CreateSensorRequest) returns(SensorDTO);
+	rpc GetSensor (GetRequest) returns(NullableSensorDTO);
+	rpc GetAllSensors (google.protobuf.Empty) returns(Sensors);
+	rpc UpdateSensor (SensorDTO) returns(google.protobuf.Empty);
+	rpc DeleteSensor (DeleteRequest) returns(google.protobuf.Empty);
+}
+
+message SensorDTO{
+	string id = 1;
+	string alphanumericCode = 2;
+	PhysicalMagnitude magnitude = 3;
+	string manufacturer = 4;
+	CommunicationProtocol protocol = 5; 
+	string principleOperation = 6;
+}
+
+message Sensors{
+	repeated SensorDTO items = 1;
+}
+
+message NullableSensorDTO{
+	oneof kind{
+		google.protobuf.Empty null = 1;
+		SensorDTO sensor = 2;
+	}
+}
+
+message CreateSensorRequest{
+	string alphanumericCode = 1;
+	PhysicalMagnitude magnitude = 2;
+	string manufacturer = 3;
+	CommunicationProtocol protocol = 4; 
+	string principleOperation = 5;
+}

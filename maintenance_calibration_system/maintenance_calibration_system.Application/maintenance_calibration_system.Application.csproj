@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MaintenanceActivitiy\**" />
+    <EmbeddedResource Remove="MaintenanceActivitiy\**" />
+    <None Remove="MaintenanceActivitiy\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\maintenance_calibration_system.Contacts\maintenance_calibration_system.Contracts.csproj" />
+    <ProjectReference Include="..\maintenance_calibration_system.DataAccess\maintenance_calibration_system.DataAccess.csproj" />
+    <ProjectReference Include="..\maintenance_calibration_system.Domain\maintenance_calibration_system.Domain.csproj" />
+    <ProjectReference Include="..\maintenance_calibration_system.GrpcProtos\maintenance_calibration_system.GrpcProtos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MaintenanceActivity\Command\NewFolder\" />
+  </ItemGroup>
+
+</Project>

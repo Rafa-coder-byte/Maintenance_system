@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maintenance_calibration_system.Domain", "maintenance_calibration_system.Domain\maintenance_calibration_system.Domain.csproj", "{9F7E2355-EC7C-486F-B648-9D48375C0EBA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maintenance_calibration_system.ConsoleApp", "maintenance_calibration_system.ConsoleApp\maintenance_calibration_system.ConsoleApp.csproj", "{837B04EA-B355-429E-A8D4-3BB3DEF72B68}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A11358B-5895-4CE9-B23F-6B99C55F31E8} = {5A11358B-5895-4CE9-B23F-6B99C55F31E8}
+		{9F7E2355-EC7C-486F-B648-9D48375C0EBA} = {9F7E2355-EC7C-486F-B648-9D48375C0EBA}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maintenance_calibration_system.DataAccess", "maintenance_calibration_system.DataAccess\maintenance_calibration_system.DataAccess.csproj", "{5A11358B-5895-4CE9-B23F-6B99C55F31E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maintenance_calibration_system.DataAccess.Tests", "maintenance_calibration_system.DataAccess.Tests\maintenance_calibration_system.DataAccess.Tests.csproj", "{4E420922-4A1B-4523-B887-4FB26E8E4C17}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9F7E2355-EC7C-486F-B648-9D48375C0EBA} = {9F7E2355-EC7C-486F-B648-9D48375C0EBA}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maintenance_calibration_system.GrpcProtos", "maintenance_calibration_system.GrpcProtos\maintenance_calibration_system.GrpcProtos.csproj", "{075E6007-D4E6-4B5C-98A0-2200129DA0C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcService1", "GrpcService1\GrpcService1.csproj", "{1B58F3E3-0C3F-4F2A-AF60-DD9598FC9316}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maintenance_calibration_system.Contracts", "maintenance_calibration_system.Contacts\maintenance_calibration_system.Contracts.csproj", "{6967245C-30D6-4ABC-89AF-47D5F24F69B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maintenance_calibration_system.Application", "maintenance_calibration_system.Application\maintenance_calibration_system.Application.csproj", "{9793039A-1B56-4DFF-9C95-F0322110A65D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F7E2355-EC7C-486F-B648-9D48375C0EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F7E2355-EC7C-486F-B648-9D48375C0EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F7E2355-EC7C-486F-B648-9D48375C0EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F7E2355-EC7C-486F-B648-9D48375C0EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{837B04EA-B355-429E-A8D4-3BB3DEF72B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837B04EA-B355-429E-A8D4-3BB3DEF72B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837B04EA-B355-429E-A8D4-3BB3DEF72B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837B04EA-B355-429E-A8D4-3BB3DEF72B68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A11358B-5895-4CE9-B23F-6B99C55F31E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A11358B-5895-4CE9-B23F-6B99C55F31E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A11358B-5895-4CE9-B23F-6B99C55F31E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A11358B-5895-4CE9-B23F-6B99C55F31E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E420922-4A1B-4523-B887-4FB26E8E4C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E420922-4A1B-4523-B887-4FB26E8E4C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E420922-4A1B-4523-B887-4FB26E8E4C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E420922-4A1B-4523-B887-4FB26E8E4C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{075E6007-D4E6-4B5C-98A0-2200129DA0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075E6007-D4E6-4B5C-98A0-2200129DA0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075E6007-D4E6-4B5C-98A0-2200129DA0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075E6007-D4E6-4B5C-98A0-2200129DA0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B58F3E3-0C3F-4F2A-AF60-DD9598FC9316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B58F3E3-0C3F-4F2A-AF60-DD9598FC9316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B58F3E3-0C3F-4F2A-AF60-DD9598FC9316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B58F3E3-0C3F-4F2A-AF60-DD9598FC9316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6967245C-30D6-4ABC-89AF-47D5F24F69B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6967245C-30D6-4ABC-89AF-47D5F24F69B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6967245C-30D6-4ABC-89AF-47D5F24F69B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6967245C-30D6-4ABC-89AF-47D5F24F69B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9793039A-1B56-4DFF-9C95-F0322110A65D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9793039A-1B56-4DFF-9C95-F0322110A65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9793039A-1B56-4DFF-9C95-F0322110A65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9793039A-1B56-4DFF-9C95-F0322110A65D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B03027E-D589-4DD7-8B66-12F33A79F346}
+	EndGlobalSection
+EndGlobal

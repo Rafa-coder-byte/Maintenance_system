@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option csharp_namespace = "maintenance_calibration_system.GrpcProtos";
+
+package GrpcProtos;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto"; 
+import "common.proto";
+
+service Planning {
+
+    rpc CreatePlanning (CreatePlanningRequest) returns(PlanningDTO);
+    rpc GetPlanning (GetRequest) returns(NullablePlanningDTO);
+    rpc GetAllPlannings (google.protobuf.Empty) returns(Plannings);
+    rpc UpdatePlanning (PlanningDTO) returns(google.protobuf.Empty);
+    rpc DeletePlanning (DeleteRequest) returns(google.protobuf.Empty);
+}
+
+message PlanningDTO {
+    string id = 1;
+    string equipmentElement = 2;
+    PlanningTypes type = 3;
+    google.protobuf.Timestamp executionDate = 4; 
+}
+
+message Plannings {
+    repeated PlanningDTO items = 1;
+}
+
+message NullablePlanningDTO {
+    oneof kind {
+        google.protobuf.Empty null = 1;
+        PlanningDTO planning = 2;
+    }
+}
+
+message CreatePlanningRequest {
+    string equipmentElement = 1;
+    PlanningTypes type = 2;
+    google.protobuf.Timestamp executionDate = 3; 
+}
+
+
+
+
